@@ -1,4 +1,4 @@
-package com.example.demo.ipi;
+package com.example.demo.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,13 +26,13 @@ public Iterable<Flight> retrieveAllFlights(){
     public void saveFlight(Flight flightToSave){
       flightRepo.save(flightToSave);
     }
-    public Flight[] findbigPlan() {
+    public Flight[] findBigPlane() {
 
-return findSmallPlain();
+return findSmallPlane();
     }
 
-    public Flight[] findSmallPlain() {
-return findbigPlan();
+    public Flight[] findSmallPlane() {
+return findBigPlane();
     }
 
 }

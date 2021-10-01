@@ -1,7 +1,6 @@
-package com.example.demo.ipi;
+package com.example.demo.api;
 // Aoutors: tai & bilala
 import lombok.Data;
-import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.Entity;
@@ -10,7 +9,6 @@ import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -19,30 +17,33 @@ import java.util.List;
 @XmlRootElement
 @Data
 @ToString
-//flight antity to find plans
+//flight entity to find flights
 public class Flight implements Serializable {
     @Id
   private  String id ;
 
   private  String size;
   private  String seatNumber;
+//  plane collection
+    String[] planeCollection = new String[]{"First","Business", "Main", "Economy", "Comfort"};
+    //A Big Plane will contain all, while a small one would include 3?
+
     //    colection for big plan
-    public Flight[] findbigPlan() {
+    public Flight[] findbigPlane() {
         List<String> values =new ArrayList<String>();
-        values.add ("");
-        values.add ("");
-        values.add ("");
+        values.addAll (List.of(planeCollection));
+
         Collections.addAll(values);
-        return  findbigPlan();
+        return  findbigPlane();
     }
-//    colection for small plan
-    public Flight[] finfSmallPlan(){
+//    collection for small plane
+    public Flight[] findSmallPlane(){
         List<String> values =new ArrayList<String>();
-        values.add ("");
-        values.add ("");
-        values.add ("");
+        values.add (planeCollection[0]);
+        values.add (planeCollection[2]);
+        values.add (planeCollection[3]);
         Collections.addAll(values);
-        return  finfSmallPlan();
+        return  findSmallPlane();
     }
 
     }

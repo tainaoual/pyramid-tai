@@ -1,4 +1,4 @@
-package com.example.demo.ipi;
+package com.example.demo.api;
 
 import org.springframework.data.repository.CrudRepository;
 //repo for plan
